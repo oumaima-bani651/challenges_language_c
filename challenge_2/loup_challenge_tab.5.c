@@ -3,23 +3,32 @@
 int main() {
     int n;
 
-    // Demander la taille du tableau
+    // Demande du nombre d'éléments
     printf("Entrez le nombre d'elements du tableau : ");
     scanf("%d", &n);
 
-    int tab[n];
-    int somme = 0;
+    
 
-    // Saisir les éléments
+    int tab[n];
+
+    // Saisie des éléments
     printf("Entrez les elements du tableau :\n");
     for (int i = 0; i < n; i++) {
         printf("Element %d : ", i + 1);
         scanf("%d", &tab[i]);
-        somme += tab[i]; // Ajouter à la somme
     }
 
-    // Afficher la somme
-    printf("La somme des elements est : %d\n", somme);
+    // Recherche du minimum
+    int min = tab[0];
+    for (int i = 1; i < n; i++) {
+        if (tab[i] < min) {
+            min = tab[i];
+        }
+    }
+
+    // Affichage du résultat
+    printf("Le plus petit element est : %d\n", min);
 
     return 0;
 }
+
